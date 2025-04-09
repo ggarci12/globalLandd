@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Global Landslide Map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+  <style>
+    body, html { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+    .legend, .title {
+      position: absolute;
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: sans-serif;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .title { top: 10px; left: 10px; }
+    .legend { bottom: 20px; left: 20px; }
+    .legend div { display: flex; align-items: center; margin-bottom: 4px; }
+    .legend span {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-right: 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div class="title"><h2>Global Landslides with Fatalities</h2></div>
+
+<div class="legend">
+  <strong>Fatalities</strong>
+  <div><span style="background:#808080"></span> 0</div>
+  <div><span style="background:#3498db"></span> 1 - 10</div>
+  <div><span style="background:#2ecc71"></span> 11 - 50</div>
+  <div><span style="background:#f1c40f"></span> 51 - 200</div>
+  <div><span style="background:#e67e22"></span> 201 - 1000</div>
+  <div><span style="background:#e74c3c"></span> 1001+</div>
+</div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZ2dnYXJjaTEyIiwiYSI6ImNtODRyOWk1YTBoaG0yam9reW9vb3c0bG0ifQ.DUgktKFoOrhiW21suCBNvA';
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/gggarci12/cm90hm97a009301r1h6j3f9ui',
+    center: [0, 20],
+    zoom: 2
+  });
+
+
+</script>
+
+</body>
+</html>
